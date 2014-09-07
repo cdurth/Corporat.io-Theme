@@ -1,0 +1,92 @@
+<section class="flexslider-wrapper container">
+  <div class="flexslider" data-slidernav="auto" data-transition="slide">
+    <!--The Slides-->
+    <div class="slides">
+      <!--Slide #1 with caption-->
+      <div class="slide">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="img/slides/slide1.png" alt="Full responsive slide image" class="animated fadeInDownBig" />
+          </div>
+          <div class="col-sm-6 caption animated fadeInUpBig">
+            <h2>
+              Enkel Bootstrap Theme
+            </h2>
+            <h4>
+              By <a href="http://themelize.me/">Themelize.me</a>
+            </h4>
+            <p>Perfect starter theme for your company or portfolio!</p>
+            <a href="https://wrapbootstrap.com/user/themelize_me" class="btn btn-lg btn-primary">Buy Now</a>
+
+          </div>
+        </div>
+      </div>
+      <!--Slide #2 with caption-->
+      <div class="slide">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="img/slides/slide2.png" alt="Easy to customise" />
+          </div>
+          <div class="col-sm-6 caption">
+            <h2>
+              Easy to customise
+            </h2>
+            <h4>
+              <i class="glyphicon glyphicon-ok"></i> 5 colour schemes
+              <br />
+              <i class="glyphicon glyphicon-ok"></i> Starter HTML & CSS templates
+              <br />
+              <i class="glyphicon glyphicon-ok"></i> Well documented 
+            </h4>
+            <a href="https://wrapbootstrap.com/user/themelize_me" class="btn btn-lg btn-primary">Buy Now</a>
+
+          </div>
+        </div>
+      </div>
+      <!--Slide #3 & so on below-->
+      <div class="slide">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="img/slides/slide3.png" alt="Happy in all browsers" />
+          </div>
+          <div class="col-sm-6 caption">
+            <h2>
+              Happy in all browsers!
+            </h2>
+            <h4>
+              Bootstrap is tested and supported in major modern browsers.
+            </h4>
+            <a href="https://wrapbootstrap.com/user/themelize_me" class="btn btn-lg btn-primary">Buy Now</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- This script must go in this partial file. If it goes somewhere else, the function
+     will be run before angular has injected this file causing the layout to be messed up -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.flexslider').each(function() {
+      var sliderSettings =  {
+        animation: $(this).attr('data-transition'),
+        selector: ".slides > .slide",
+        controlNav: true,
+        smoothHeight: true,
+        animationLoop: false,
+      };
+      
+      var sliderNav = $(this).attr('data-slidernav');
+      if (sliderNav !== 'auto') {
+        sliderSettings = $.extend({}, sliderSettings, {
+          manualControls: sliderNav +' li a',
+          controlsContainer: '.flexslider-wrapper'
+        });
+      }
+      
+      $(this).flexslider(sliderSettings);
+    });
+  });
+</script>
