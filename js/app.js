@@ -15,23 +15,30 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
       .state('services',{
         url: '/services',
         views: {
-          'highlighted': {templateUrl: 'views/partial-services.html' },
-          'content': { templateUrl: 'views/partial-home.html' }
+          'highlighted': { templateUrl: 'views/partial-services-highlighted.html' },
+          'content': { templateUrl: 'views/partial-services.html' }
+        }
+      })
+      .state('about', {
+        url: '/about',
+        views: {
+          'highlighted': { templateUrl: 'views/partial-about-highlighted.html' },
+          'content': { templateUrl: 'views/partial-about.html' }
         }
       })
       .state('portfolio',{
         url: '/portfolio',
         views: {
-          'highlighted': {templateUrl: 'views/partial-portfolio.html' },
-          'content': { templateUrl: 'views/partial-home.html' }
+          'highlighted': { templateUrl: 'views/partial-portfolio-highlighted.html' },
+          'content': { templateUrl: 'views/partial-portfolio.html' }
         }
-      })
-      .state('about',{
-        url: '/about',
-        views: {
-          'highlighted': {templateUrl: 'views/partial-about.html' },
-          'content': { templateUrl: 'views/partial-home.html' }
-        }
-      })
+      });
+      // .state('about',{
+      //   url: '/about',
+      //   views: {
+      //     'highlighted': {templateUrl: 'views/partial-about.html' },
+      //     'content': { templateUrl: 'views/partial-home.html' }
+      //   }
+      // })
 });
 
