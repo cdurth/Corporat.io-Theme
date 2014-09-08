@@ -748,6 +748,7 @@ ul#main-menu li:last-child {
 }
 ul#main-menu li a,
 ul#main-menu li a:link {
+  font-family: 'Roboto', sans-serif;
   text-shadow: none;
   display: block;
   font-weight: normal;
