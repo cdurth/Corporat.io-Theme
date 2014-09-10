@@ -23,7 +23,16 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         url: '/about',
         views: {
           'highlighted': { templateUrl: 'views/partial-about-highlighted.html' },
-          'content': { templateUrl: 'views/partial-about.html' }
+          'content': { templateUrl: 'views/partial-about.html' },
+          'sidebar@about': { templateUrl: 'views/partial-about-sidebar.html' }
+        }
+      })
+      .state('about_member', {
+        url: '/about_member',
+        views: {
+          'highlighted': { templateUrl: 'views/partial-about-member-highlighted.html' },
+          'content': { templateUrl: 'views/partial-about-member.html' },
+          'sidebar@about_member': { templateUrl: 'views/partial-about-sidebar.html' }
         }
       })
       .state('portfolio',{
