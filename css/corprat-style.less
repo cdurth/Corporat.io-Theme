@@ -1,0 +1,349 @@
+@color-main1: hsl(130, 5%, 25%);
+@color-main2: darken(@color-main1, 20%);
+
+@color-highlight: hsl(85, 50%, 35%);
+@color-highlight-50: fade(@color-highlight, 50%);
+@color-block-highlight: hsl(hue(@color-highlight), saturation(@color-highlight), 30%);
+@color-progress-bar: lighten(@color-highlight, 5%);
+@color-page-title-small: fade(@color-highlight, 50%);
+
+@color-navgrad1: hsl(hue(@color-main1), 5%, 17%);
+@color-navgrad2: hsl(hue(@color-main1), 5%, 7%);
+@color-navhovergrad1: @color-main1;
+@color-navhovergrad2: darken(@color-main1, 100%);
+
+@color-border-30: fade(@color-highlight, 30%);
+@color-icon-background-50: fade(@color-highlight, 50%);
+@color-icon-background-80: fade(@color-highlight, 80%);
+
+.badge-primary,.label-primary {
+  background-color: @color-main1;
+}
+.badge-primary[href],.label-primary[href] {
+  background-color: @color-main2;
+}
+body {
+  .text-info {
+    color: @color-highlight;
+  }
+  .progress-bar-info {
+    background-color: @color-progress-bar;
+  }
+  a {
+    color: @color-main1;
+    text-decoration: none;
+  }
+  a:hover {
+    color: @color-main2;
+    text-decoration: underline;
+    img {
+      border-color: #3d8abb;
+    }
+  }
+  .header {
+    .page-title {
+      color: @color-highlight;
+
+      small {
+        color: @color-page-title-small;
+      }
+    }
+  }
+  .primary-colour {
+    color: @color-main1;
+  }
+  .primary-colour-bg {
+    background: @color-main1;
+  }
+  .primary-colour-bg-50 {
+    background: @color-main1;
+    background: fade(@color-main1, 50%);
+  }
+  .primary-colour-bg-80 {
+    background: @color-main1;
+    background: fade(@color-main1, 50%);
+  }
+  .block {
+    .title {
+      color: @color-main1;
+    }
+    .block-title {
+      border-bottom: 1px solid @color-border-30;
+
+      span {
+        border-bottom-color: @color-block-highlight;
+      }
+    }
+  }
+  .mission {
+    h3 {
+      color: @color-main2;
+    }
+    .inner span {
+      color: @color-highlight;
+    }
+  }
+  .btn-primary {
+    background-color: @color-main1;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: -webkit-linear-gradient(top, @color-main1 0%, @color-main2 100%);
+    background-image: -o-linear-gradient(top, @color-main1 0%, @color-main2 100%);
+    background-image: linear-gradient(to bottom, @color-main1 0%, @color-main2 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff377ca8', endColorstr='#ff2a6082', GradientType=0);
+    border-color: @color-main2 @color-main2 #183548;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    *background-color: @color-main2;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+  }
+  .navbar-inner {
+    background-image: -webkit-linear-gradient(top, @color-navgrad1 0%, @color-navgrad2 100%);
+    background-image: -o-linear-gradient(top, @color-navgrad1 0%, @color-navgrad2 100%);
+    background-image: linear-gradient(to bottom, @color-navgrad1 0%, @color-navgrad2 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color-navgrad1, endColorstr=@color-navgrad2, GradientType=0);
+    border-top-color: @color-navgrad1;
+    border-bottom-color: @color-navgrad1;
+  }
+  .navbar {
+    .divider-vertical {
+      border-left: 1px solid @color-main2;
+      border-right: 1px solid @color-main1;
+    }
+    .nav {
+      & > li {
+        & > .dropdown-menu:before {
+          border-bottom-color: @color-main2;
+        }
+        & > .dropdown-menu:after {
+          border-bottom: 6px solid #2d6589;
+        }
+      }
+    }
+  }
+  .navbar-fixed-bottom {
+    .nav {
+      & > li {
+        & > .dropdown-menu:before {
+          border-top-color: @color-main2;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    background-color: @color-main1 !important;
+    border: 1px solid #ccc;
+    border: 1px solid @color-main2;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    .divider {
+      *width: 100%;
+      height: 1px;
+      margin: -0.2857142855 1px;
+      *margin: -5px 0 5px;
+      overflow: hidden;
+      background-color: @color-main2;
+      border-bottom: 1px solid @color-main1;
+    }
+  }
+  #navigation {
+    .navbar-inner {
+      border-top-color: @color-main1;
+      border-bottom-color: @color-main1;
+    }
+    .btn-navbar {
+      background: @color-main1;
+    }
+    ul#main-menu {
+      li {
+        border-left-color: rgba(255, 255, 255, 0.1);
+        border-right-color: @color-main2;
+      }
+      li.dropdown.open {
+        a.dropdown-toggle {
+          background: @color-main2;
+        }
+        ul.dropdown-menu {
+          a {
+            border-bottom-color: @color-main1;
+          }
+        }
+      }
+    }
+  }
+  #highlighted {
+    border-bottom-color: #e1e1e1;
+    background-color: #f2f2f2;
+    color: @color-main1;
+    text-shadow: 1px 1px 1px #ffffff;
+  }
+  #footer {
+    border-top-color: @color-main1;
+  }
+  .projects {
+    li {
+      .project {
+        border-bottom-color: @color-block-highlight;
+        a.lnk-polaroid {
+          display: block;
+        }
+        a:hover {
+          img {
+            border-color: @color-block-highlight;
+          }
+        }
+      }
+      .project:hover {
+        border-bottom-color: @color-main2;
+      }
+    }
+  }
+  .team-member {
+    .social-media {
+      a {
+        i {
+          background-color: @color-main1;
+          background: @color-highlight-50;
+        }
+      }
+      a:hover {
+        i {
+          background-color: @color-main1;
+        }
+      }
+    }
+  }
+  .colour-switcher.tool {
+    background: @color-main2;
+  }
+}
+body .btn-primary:hover,body .btn-primary:focus,body .btn-primary:active,body .btn-primary.active,body .btn-primary.disabled,body .btn-primary[disabled] {
+  color: #ffffff;
+  background-color: @color-navhovergrad1;
+  *background-color: #24516e;
+  background-image: none;
+}
+body .dropdown-menu li &>a:hover,body .dropdown-menu li &>a:focus,body .dropdown-submenu:hover &>a {
+  color: rgba(255, 255, 255, 0.9);
+  background-image: -webkit-linear-gradient(top, @color-navhovergrad1 0%, #24516e 100%);
+  background-image: -o-linear-gradient(top, @color-navhovergrad1 0%, #24516e 100%);
+  background-image: linear-gradient(to bottom, @color-navhovergrad1 0%, #24516e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color-navhovergrad1, endColorstr='#ff24516e', GradientType=0);
+}
+body .dropdown-menu .active &>a,body .dropdown-menu .active &>a:hover {
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, @color-main1 0%, #316e95 100%);
+  background-image: -o-linear-gradient(top, @color-main1 0%, #316e95 100%);
+  background-image: linear-gradient(to bottom, @color-main1 0%, #316e95 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff377ca8', endColorstr='#ff316e95', GradientType=0);
+}
+@media (min-width: 1000px) {
+  body {
+    .dropdown-menu {
+      background-color: @color-navgrad2 !important;
+    }
+    ul#main-menu .dropdown-menu li a:hover,
+    ul#main-menu .dropdown-menu li a.active,
+    ul#main-menu .dropdown-menu li.active > a,
+    ul#main-menu .dropdown-menu li.active > a:hover,
+    ul#main-menu .dropdown-menu li.active > a:focus {
+      background-color: @color-main1 !important;
+    }
+  }
+}
+body .pagination li a,body .pagination li span {
+  color: @color-main1;
+}
+body .pagination li a:hover,body .pagination li span:hover,body .pagination li a:focus,body .pagination li span:focus,body .pagination li a:active,body .pagination li span:active {
+  color: @color-main1;
+  text-decoration: none;
+  background: #F5F5F5;
+}
+body #navigation ul#main-menu li a:hover,body #navigation ul#main-menu li a.active,body #navigation ul#main-menu li.over &>a,body #navigation ul#main-menu li.active &>a,body #navigation ul#main-menu li.active &>a:hover,body #navigation ul#main-menu li.active &>a:focus {
+  background: @color-main2;
+}
+body .nav-list li.active &>a,body .nav-list li.active &>a:hover,body .nav-list li.active &>a:focus {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: @color-main1;
+}
+body .carousel#carousel-front .item h1,body .carousel#carousel-front .item h2,body .carousel#carousel-front .item h3,body .carousel#carousel-front .item h4,body .carousel#carousel-front .item h5 {
+  color: @color-main1;
+}
+.primary-colour {
+  color: @color-main1;
+}
+.primary-colour-bg {
+  background-color: @color-main1;
+}
+.primary-colour-bg-50 {
+  background-color: @color-main1;
+  background: rgba(55, 124, 168, 0.5);
+}
+.primary-colour-bg-80 {
+  background-color: @color-main1;
+  background: rgba(55, 124, 168, 0.8);
+}
+.more-link:hover {
+  border-bottom: 3px solid @color-main1;
+  text-decoration: none;
+}
+._icon-circle-double {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+  border: 3px solid #e7f1f7;
+  box-shadow: 0 0 0 2px @color-main1;
+  padding-right: 0;
+  margin-right: 0.2em;
+}
+._icon-inverse {
+  background-color: @color-main1;
+  color: #ffffff;
+  text-align: center;
+}
+._icon-inverse-50 {
+  background-color: @color-main1;
+  background: @color-icon-background-50;
+  color: #ffffff;
+  text-align: center;
+}
+._icon-inverse-80 {
+  background-color: @color-main1;
+  background: @color-icon-background-80;
+  color: #ffffff;
+  text-align: center;
+}
+body .icon-inverse,li .icon-inverse {
+  background-color: @color-main1;
+  color: #ffffff;
+  text-align: center;
+}
+body .icon-inverse-50,li .icon-inverse-50 {
+  background-color: @color-main1;
+  background: @color-icon-background-50;
+  color: #ffffff;
+  text-align: center;
+}
+body .icon-inverse-80,li .icon-inverse-80 {
+  background-color: @color-main1;
+  background: @color-icon-background-80;
+  color: #ffffff;
+  text-align: center;
+}
+a:hover .icon-inverse-50,a:hover .icon-inverse-80 {
+  background: @color-main1;
+}
+.secondary-nav {
+  li.active {
+    a {
+      background: @color-main1;
+    }
+  }
+}
